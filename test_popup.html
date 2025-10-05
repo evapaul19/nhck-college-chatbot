@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NHCK Chatbot Popup</title>
+    <style>
+        /* Popup container */
+        #chatPopup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;          /* Increased width */
+            height: 450px;         /* Increased height */
+            background: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        /* Header */
+        #chatHeader {
+            background: #0078d7;
+            color: white;
+            padding: 10px 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        /* Chat messages container */
+        #chatMessages {
+            flex: 1;
+            min-height: 300px;          /* Increased height */
+            padding: 15px;
+            overflow-y: auto;           /* Enable vertical scrolling */
+            background: #f9f9f9;
+            word-wrap: break-word;      /* Wrap long words */
+            white-space: pre-wrap;      /* Preserve line breaks */
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Individual messages */
+        .user-message {
+            background: #0078d7;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            align-self: flex-end;
+            white-space: pre-wrap;
+        }
+
+        .bot-message {
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            align-self: flex-start;
+            white-space: pre-wrap;      /* Preserve line breaks */
+        }
+
+        /* Input container */
+        #chatInputContainer {
+            display: flex;
+            padding: 10px 15px;
+            background: #eee;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Input box */
+        #chatInput {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        /* Send button */
+        #sendBtn {
+            background: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        #sendBtn:hover {
+            background: #005fa3;
+        }
+
+        /* Floating button to open/close popup */
+        #floatingBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating button -->
+<button id="floatingBtn">💬</button>
+
+<!-- Chat popup -->
+<div id="chatPopup" style="display:none;">
+    <div id="chatHeader">NHCK Chatbot</div>
+    <div id="chatMessages"></div>
+    <div id="chatInputContainer">
+        <input type="text" id="chatInput" placeholder="Type your question..." />
+        <button id="sendBtn">Send</button>
+    </div>
+</div>
+
+<script>
+    const API_URL = 'http://127.0.0.1:5000/get_response';  // Change to your Heroku URL when deployed
+
+    const floatingBtn = document.getElementById('floatingBtn');
+    const chatPopup = document.getElementById('chatPopup');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    // Toggle popup visibility
+    floatingBtn.addEventListener('click', () => {
+        if (chatPopup.style.display === 'none') {
+            chatPopup.style.display = 'flex';
+            floatingBtn.style.display = 'none';
+            chatInput.focus();
+        }
+    });
+
+    // Function to add message to chat
+    function addMessage(text, sender) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
+        msgDiv.textContent = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;  // Scroll to bottom
+    }
+
+    // Send user input to API and get response
+    async function sendMessage() {
+        const userText = chatInput.value.trim();
+        if (!userText) return;
+
+        addMessage(userText, 'user');
+        chatInput.value = '';
+        chatInput.disabled = true;
+        sendBtn.disabled = true;
+
+        try {
+            const formData = new URLSearchParams();
+            formData.append('user_input', userText);
+
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            addMessage(data.response, 'bot');
+        } catch (error) {
+            addMessage('Sorry, something went wrong. Please try again later.', 'bot');
+            console.error('Error:', error);
+        } finally {
+            chatInput.disabled = false;
+            sendBtn.disabled = false;
+            chatInput.focus();
+        }
+    }
+
+    // Send message on button click
+    sendBtn.addEventListener('click', sendMessage);
+
+    // Send message on Enter key press
+    chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>
+
+</body>
+</html>

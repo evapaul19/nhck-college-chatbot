@@ -1,0 +1,175 @@
+2025-10-04 11:49:17 - Query: :User  what programming lamguages are taught in bca?
+2025-10-04 11:51:26 - Query: :User   what programming languages are taught in bca?
+2025-10-04 11:51:26 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 11:51:49 - Query: :User   What documents are needed for admission?
+2025-10-04 11:51:49 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 11:53:46 - Query: :User   where is nhck located?
+2025-10-04 11:53:46 - Query: Response: NHCK, Koramangala: No. 16-17, 4th 'A' Cross, 2nd Sector, HSR Layout, Bangalore - 560102. Near metro.
+2025-10-04 11:54:31 - Query: :User   where is nhck located?
+2025-10-04 11:54:31 - Query: Response: 3rd ‘A’ Cross, 2nd ‘A’ Main, Kasturinagar, East of NGEF Layout, Bengaluru – 560 043, India
+2025-10-04 12:00:48 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 12:00:48 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 12:00:48 - Query:  * Restarting with stat
+2025-10-04 12:00:54 - Query:  * Debugger is active!
+2025-10-04 12:00:54 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 12:02:28 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 12:02:28 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 12:02:28 - Query:  * Restarting with stat
+2025-10-04 12:02:34 - Query:  * Debugger is active!
+2025-10-04 12:02:34 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:06:13 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 15:06:13 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 15:06:13 - Query:  * Restarting with stat
+2025-10-04 15:06:17 - Query:  * Debugger is active!
+2025-10-04 15:06:17 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:08:35 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 15:08:35 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 15:08:35 - Query:  * Restarting with stat
+2025-10-04 15:08:40 - Query:  * Debugger is active!
+2025-10-04 15:08:40 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:10:36 - Query: 127.0.0.1 - - [04/Oct/2025 15:10:36] "GET /health HTTP/1.1" 200 -
+2025-10-04 15:10:36 - Query: 127.0.0.1 - - [04/Oct/2025 15:10:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-04 15:19:11 - Query: 127.0.0.1 - - [04/Oct/2025 15:19:11] "GET /health HTTP/1.1" 200 -
+2025-10-04 15:21:28 - Query: 127.0.0.1 - - [04/Oct/2025 15:21:28] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:26:29 - Query: :User   what is bca?
+2025-10-04 15:26:29 - Query: Response: BCA is a 3-year program divided into 6 semesters, with project work in the final year.
+2025-10-04 15:26:29 - Query: 127.0.0.1 - - [04/Oct/2025 15:26:29] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:27:33 - Query: :User   prograamming languages in bca?
+2025-10-04 15:27:33 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 15:27:33 - Query: 127.0.0.1 - - [04/Oct/2025 15:27:33] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:29:47 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 15:29:47 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 15:29:47 - Query:  * Restarting with stat
+2025-10-04 15:29:51 - Query:  * Debugger is active!
+2025-10-04 15:29:51 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:42:16 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 15:42:16 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 15:42:17 - Query:  * Restarting with stat
+2025-10-04 15:42:24 - Query:  * Debugger is active!
+2025-10-04 15:42:24 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:42:24 - Query:  * Debugger is active!
+2025-10-04 15:42:24 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 15:46:40 - Query: :User   what is bca?
+2025-10-04 15:46:40 - Query: Response: BCA is a 3-year program divided into 6 semesters, with project work in the final year.
+2025-10-04 15:46:40 - Query: 127.0.0.1 - - [04/Oct/2025 15:46:40] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:47:59 - Query: :User   what programming languages are taught in bca?
+2025-10-04 15:47:59 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 15:47:59 - Query: 127.0.0.1 - - [04/Oct/2025 15:47:59] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:48:31 - Query: :User   do you offer scholarships?
+2025-10-04 15:48:31 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 15:48:31 - Query: 127.0.0.1 - - [04/Oct/2025 15:48:31] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 15:48:40 - Query: :User   what is bca?
+2025-10-04 15:48:40 - Query: Response: Merit scholarships (20-50% waiver), need-based aid, and govt. schemes. Apply during admission.
+2025-10-04 15:48:40 - Query: 127.0.0.1 - - [04/Oct/2025 15:48:40] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 17:08:11 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 17:08:11 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 17:08:11 - Query:  * Restarting with stat
+2025-10-04 17:08:11 - Query:  * Restarting with stat
+2025-10-04 17:08:26 - Query:  * Debugger is active!
+2025-10-04 17:08:26 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 17:08:26 - Query:  * Debugger is active!
+2025-10-04 17:08:26 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 17:08:31 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-04 17:08:31 - Query: [33mPress CTRL+C to quit[0m
+2025-10-04 17:08:31 - Query:  * Restarting with stat
+2025-10-04 17:08:35 - Query:  * Debugger is active!
+2025-10-04 17:08:35 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 17:17:51 - Query: :User   what is bca
+2025-10-04 17:17:51 - Query: Response: BCA is a 3-year program divided into 6 semesters, with project work in the final year.
+2025-10-04 17:17:51 - Query: 127.0.0.1 - - [04/Oct/2025 17:17:51] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 17:18:07 - Query: :User   what programming languages are taught in bca
+2025-10-04 17:18:07 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 17:18:07 - Query: 127.0.0.1 - - [04/Oct/2025 17:18:07] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 17:18:18 - Query: :User   schloarship?
+2025-10-04 17:18:18 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-04 17:18:18 - Query: 127.0.0.1 - - [04/Oct/2025 17:18:18] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 17:20:58 - Query: :User   do you offer schloarships?
+2025-10-04 17:20:58 - Query: Response: Merit scholarships (20-50% waiver), need-based aid, and govt. schemes. Apply during admission.
+2025-10-04 17:20:58 - Query: 127.0.0.1 - - [04/Oct/2025 17:20:58] "POST /get_response HTTP/1.1" 200 -
+2025-10-04 17:52:55 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 17:52:56 - Query:  * Restarting with stat
+2025-10-04 17:52:56 - Query:  * Restarting with stat
+2025-10-04 17:52:56 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-04 17:52:57 - Query:  * Restarting with stat
+2025-10-04 17:53:01 - Query:  * Debugger is active!
+2025-10-04 17:53:01 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 17:53:01 - Query:  * Debugger is active!
+2025-10-04 17:53:01 - Query:  * Debugger PIN: 507-212-110
+2025-10-04 17:53:02 - Query:  * Debugger is active!
+2025-10-04 17:53:02 - Query:  * Debugger PIN: 507-212-110
+2025-10-05 10:30:08 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-05 10:30:08 - Query: [33mPress CTRL+C to quit[0m
+2025-10-05 10:30:08 - Query:  * Restarting with stat
+2025-10-05 10:30:12 - Query:  * Debugger is active!
+2025-10-05 10:30:12 - Query:  * Debugger PIN: 830-675-955
+2025-10-05 10:33:50 - Query: 127.0.0.1 - - [05/Oct/2025 10:33:50] "[33mGET / HTTP/1.1[0m" 404 -
+2025-10-05 10:33:50 - Query: 127.0.0.1 - - [05/Oct/2025 10:33:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-05 10:39:55 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\chatbot.py', reloading
+2025-10-05 10:39:56 - Query:  * Restarting with stat
+2025-10-05 10:40:05 - Query:  * Debugger is active!
+2025-10-05 10:40:05 - Query:  * Debugger PIN: 830-675-955
+2025-10-05 10:40:42 - Query:  * Detected change in 'C:\\Users\\login\\OneDrive\\Documents\\ai_college_chatbot\\app.py', reloading
+2025-10-05 10:40:43 - Query:  * Restarting with stat
+2025-10-05 10:40:49 - Query:  * Debugger is active!
+2025-10-05 10:40:49 - Query:  * Debugger PIN: 830-675-955
+2025-10-05 10:42:13 - Query: :User    doyou offer schlarships?
+2025-10-05 10:42:13 - Query: Response: Merit scholarships (20-50% waiver), need-based aid, and govt. schemes. Apply during admission.
+2025-10-05 10:42:27 - Query: :User    what programming languagues are taught?
+2025-10-05 10:42:27 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-05 10:42:35 - Query: :User    python app.py
+2025-10-05 10:42:35 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-05 10:42:54 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-05 10:42:54 - Query: [33mPress CTRL+C to quit[0m
+2025-10-05 10:42:54 - Query:  * Restarting with stat
+2025-10-05 10:42:59 - Query:  * Debugger is active!
+2025-10-05 10:42:59 - Query:  * Debugger PIN: 830-675-955
+2025-10-05 10:43:08 - Query: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-10-05 10:43:08 - Query: [33mPress CTRL+C to quit[0m
+2025-10-05 10:43:08 - Query:  * Restarting with stat
+2025-10-05 10:43:13 - Query:  * Debugger is active!
+2025-10-05 10:43:13 - Query:  * Debugger PIN: 830-675-955
+2025-10-05 10:43:20 - Query: 127.0.0.1 - - [05/Oct/2025 10:43:20] "GET / HTTP/1.1" 200 -
+2025-10-05 10:43:20 - Query: 127.0.0.1 - - [05/Oct/2025 10:43:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-05 10:43:44 - Query: :User    schloarships?
+2025-10-05 10:43:44 - Query: OpenAI error: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-05 10:43:44 - Query: Response: Sorry, I couldn't generate a response right now. Try rephrasing or visit nhck.in.
+2025-10-05 10:43:44 - Query: 127.0.0.1 - - [05/Oct/2025 10:43:44] "POST /get_response HTTP/1.1" 200 -
+2025-10-05 10:43:59 - Query: :User    what programming languageds are taught?
+2025-10-05 10:43:59 - Query: Response: BCA curriculum includes Python, Java, C++, JavaScript, and SQL. Hands-on labs provided.
+2025-10-05 10:43:59 - Query: 127.0.0.1 - - [05/Oct/2025 10:43:59] "POST /get_response HTTP/1.1" 200 -

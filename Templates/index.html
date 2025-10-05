@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CollegeBot Chat</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #e5e5e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .chat-container {
+        width: 400px;
+        max-width: 95%;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .chat-header {
+        background: #1a73e8; /* Blue header */
+        color: #fff;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .chat-box {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #f0f2f5;
+        display: flex;
+        flex-direction: column;
+    }
+    .message {
+        margin: 10px 0;
+        display: flex;
+        align-items: flex-end;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .user-msg { justify-content: flex-end; }
+    .user-msg .msg-content {
+        background: #dcf8c6;
+        color: #000;
+        border-radius: 15px 15px 0 15px;
+        padding: 8px 12px;
+        max-width: 70%;
+        position: relative;
+    }
+    .bot-msg { justify-content: flex-start; }
+    .bot-msg .msg-content {
+        background: #fff;
+        color: #000;
+        border-radius: 15px 15px 15px 0;
+        padding: 8px 12px;
+        max-width: 70%;
+        position: relative;
+        border: 1px solid #ddd;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 5px;
+    }
+    .typing-dots span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 2px;
+        background: #555;
+        border-radius: 50%;
+        animation: blink 1.4s infinite both;
+    }
+    .typing-dots span:nth-child(1) { animation-delay: 0s; }
+    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes blink {
+        0%, 80%, 100% { opacity: 0; }
+        40% { opacity: 1; }
+    }
+    .chat-input {
+        display: flex;
+        border-top: 1px solid #ccc;
+    }
+    .chat-input input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .chat-input button {
+        padding: 10px 15px;
+        border: none;
+        background: #e53935; /* Red send button */
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .chat-input button:hover { background: #b71c1c; } /* Darker red hover */
+    .quick-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 10px;
+        gap: 5px;
+        justify-content: center;
+    }
+    .quick-buttons button {
+        padding: 5px 10px;
+        border: none;
+        background: #1a73e8; /* Blue quick buttons */
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    .quick-buttons button:hover { background: #0b59c1; } /* Darker blue hover */
+    .timestamp {
+        font-size: 10px;
+        color: #555;
+        margin-top: 2px;
+        text-align: right;
+    }
+    @media(max-width: 500px){
+        .chat-container { width: 95%; height: 90vh; }
+        .chat-box { padding: 10px; }
+    }
+</style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-header">💬 CollegeBot</div>
+    <div class="chat-box" id="chat-box">
+        <div class="message bot-msg" style="opacity:1;">
+            <img class="avatar" src="https://i.ibb.co/2nL9T9X/bot.png" alt="Bot">
+            <div class="msg-content">Hello! I’m CollegeBot. How can I help you today?<div class="timestamp"></div></div>
+        </div>
+    </div>
+
+    <div class="quick-buttons">
+        <button onclick="sendQuick('BCA Courses')">BCA Courses</button>
+        <button onclick="sendQuick('Admission Process')">Admission Process</button>
+        <button onclick="sendQuick('Next Exam Date')">Next Exam Date</button>
+        <button onclick="sendQuick('Placement Assistance')">Placement Assistance</button>
+    </div>
+
+    <form class="chat-input" id="chat-form">
+        <input type="text" id="user_input" placeholder="Type your message..." autocomplete="off" required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script>
+const form = document.getElementById("chat-form");
+const input = document.getElementById("user_input");
+const chatBox = document.getElementById("chat-box");
+
+function appendMessage(message, sender) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", sender + "-msg");
+
+    const avatar = sender === "bot" 
+        ? `<img class="avatar" src="https://i.ibb.co/2nL9T9X/bot.png" alt="Bot">` 
+        : `<img class="avatar" src="https://i.ibb.co/mc0pSxL/user.png" alt="You">`;
+
+    const timestamp = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+
+    if(sender === "bot"){
+        message = message.replace(/\b(BCA|admission|exam|placement|internship)\b/gi, '<b>$1</b>');
+    }
+
+    msgDiv.innerHTML = `${avatar} <div class="msg-content">${message}<div class="timestamp">${timestamp}</div></div>`;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function sendMessage(userMessage){
+    appendMessage(userMessage, "user");
+    input.value = "";
+
+    const botDiv = document.createElement("div");
+    botDiv.classList.add("message", "bot-msg");
+    botDiv.innerHTML = `<img class="avatar" src="https://i.ibb.co/2nL9T9X/bot.png" alt="Bot">
+    <div class="msg-content typing-dots"><span></span><span></span><span></span></div>`;
+    chatBox.appendChild(botDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    try {
+        const response = await fetch("/get_response", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `user_input=${encodeURIComponent(userMessage)}`
+        });
+        const text = await response.text();
+
+        setTimeout(()=>{
+            botDiv.innerHTML = `<img class="avatar" src="https://i.ibb.co/2nL9T9X/bot.png" alt="Bot">
+            <div class="msg-content">${text}<div class="timestamp">${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</div></div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, 1000);
+    } catch (err){
+        botDiv.innerHTML = `<img class="avatar" src="https://i.ibb.co/2nL9T9X/bot.png" alt="Bot">
+        <div class="msg-content">Oops! Something went wrong.<div class="timestamp">${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</div></div>`;
+    }
+}
+
+function sendQuick(msg){ sendMessage(msg); }
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const msg = input.value.trim();
+    if(msg) sendMessage(msg);
+});
+</script>
+</body>
+</html>

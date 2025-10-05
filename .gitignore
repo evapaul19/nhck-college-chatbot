@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+chatbot_log.txt  # Logs file
+nltk_data/  # NLTK downloads (large)
